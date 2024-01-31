@@ -1,0 +1,21 @@
+models:
+  - type: main
+    engine: hf_pipeline_llama2_7b
+    parameters:
+      path: "meta-llama/Llama-2-7b-chat-hf"
+
+      # number of GPUs you have , do nvidia-smi to check
+      num_gpus: 1
+
+      # This can be: "cpu" or "cuda". "mps" is not supported.
+      device: "cuda"
+
+# Use the simple embedding search provider for the core logic.
+# core:
+#   embedding_search_provider:
+#     name: simple
+
+# And for the knowledge base.
+knowledge_base:
+  embedding_search_provider:
+    name: simple
